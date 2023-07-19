@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/presentation/widgets/home/header_category_widget.dart';
 import 'package:travel_app/presentation/widgets/home/header_search_widget.dart';
 import 'package:travel_app/presentation/widgets/home/header_welcome_widget.dart';
 
@@ -14,7 +15,8 @@ class HeaderHomeWidget extends StatelessWidget {
         children: [
           WelcomeHeaderWidget(),
           SizedBox(height: 30,),
-          HeaderSearchWidget()
+          HeaderSearchWidget(),
+          HeaderCategoryWidget()
         ],
       ),
     );
