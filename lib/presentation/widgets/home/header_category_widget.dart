@@ -12,26 +12,40 @@ class HeaderCategoryWidget extends StatelessWidget {
       width: double.infinity,
       height: 60,
       color: Colors.indigo,
-      child:Center(
-        child: ListView.builder(
-          shrinkWrap: true,
-          itemExtent: 100,
-          scrollDirection: Axis.horizontal,
-          itemCount:categories.length ,
-          itemBuilder:(context, index) {
-        
-            return Container(
-              margin: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
-              alignment: Alignment.center,
-               child: Text( '${categories[1].name}'),
-               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(100)
-               ),
-               );
-          }, 
-          ),
-      ) 
+      alignment: Alignment.center,
+      child:Row(
+        children: List.generate(categories.length, 
+        (index){
+          final category = categories[index];
+          return _ButtonCategory(category: category);
+        }
+        ),
+      )
     );
   }
 }
+
+
+class _ButtonCategory extends StatelessWidget {
+  
+  final Category category;
+  const _ButtonCategory({super.key, required this.category});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: _Decoration(),
+      child:Row(
+        children: [
+          Icon(category.icon),
+          Text(category.name)
+        ],
+      ),
+    );
+  }
+
+  BoxDecoration _Decoration() => BoxDecoration(
+    
+  );
+}
+
