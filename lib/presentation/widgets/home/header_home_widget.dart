@@ -11,7 +11,7 @@ class HeaderHomeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding:const EdgeInsets.symmetric(horizontal: 15),
-      child: Column(
+      child:const Column(
         children: [
           WelcomeHeaderWidget(),
           SizedBox(height: 30,),
