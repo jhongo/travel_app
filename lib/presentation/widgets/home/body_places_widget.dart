@@ -9,6 +9,7 @@ class BodyPlacesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Color(0xFFe56b6f),
       width: double.infinity,
       height: 300,
       child: ListView.builder(
