@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/infraestructure/models/category_model.dart';
 
@@ -11,9 +10,9 @@ class HeaderCategoryWidget extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 60,
-      color: Colors.indigo,
       alignment: Alignment.center,
       child:Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: List.generate(categories.length, 
         (index){
           final category = categories[index];
@@ -34,10 +33,12 @@ class _ButtonCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       decoration: _Decoration(),
       child:Row(
         children: [
           Icon(category.icon),
+          SizedBox(width: 10,),
           Text(category.name)
         ],
       ),
@@ -45,7 +46,8 @@ class _ButtonCategory extends StatelessWidget {
   }
 
   BoxDecoration _Decoration() => BoxDecoration(
-    
+    color: Color(0xFFe9ecef),
+    borderRadius: BorderRadius.circular(100)
   );
 }
 

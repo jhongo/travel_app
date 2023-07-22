@@ -16,6 +16,7 @@ class HeaderHomeWidget extends StatelessWidget {
           WelcomeHeaderWidget(),
           SizedBox(height: 30,),
           HeaderSearchWidget(),
+          SizedBox(height: 15,),
           HeaderCategoryWidget()
         ],
       ),

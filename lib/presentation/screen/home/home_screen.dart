@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/presentation/widgets/home/body_home_widget.dart';
 import 'package:travel_app/presentation/widgets/home/header_home_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,7 +13,9 @@ class HomeScreen extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              HeaderHomeWidget()
+              HeaderHomeWidget(),
+              SizedBox(height: 10,),
+              BodyHomeWidget()
             ],
           ),
         ),
