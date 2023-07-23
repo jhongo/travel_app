@@ -23,7 +23,11 @@ class CardPlaceWidget extends StatelessWidget {
             child: Container(
               width: double.infinity,
               height: 180,
-              child: Image.asset(places.url, fit: BoxFit.fill),
+              child: FadeInImage(
+                placeholder:const AssetImage('assets/gifs/loadingImage.gif'), 
+                image: AssetImage(places.url,),
+                fit: BoxFit.fill,
+                )
             ),
           ),
 
@@ -84,7 +88,7 @@ class BorderPaint extends CustomPainter{
   void paint(Canvas canvas, Size size) {
 
     final paint = Paint(); 
-    paint.color = const Color(0xFFf2f2f2);
+    paint.color = Color(0xFFFAFAFA);
     // paint.color = Color(0xFF523737);
     paint.style = PaintingStyle.fill;
     paint.strokeWidth = 5;

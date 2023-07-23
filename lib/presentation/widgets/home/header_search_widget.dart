@@ -8,7 +8,7 @@ class HeaderSearchWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(),
+      padding: EdgeInsets.symmetric(vertical: 20),
       child: TextFormField(
 
         cursorColor: Colors.black,
