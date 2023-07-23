@@ -51,7 +51,21 @@ class CardPlaceWidget extends StatelessWidget {
               ),
             ),
           ),
+
+     
+
           Positioned(right: 0,child: CurveWidget(painter: BorderPaint()),),
+          Positioned(right: 0, child: TextButton(onPressed:() {},
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.white,
+                shape: CircleBorder()
+              ), 
+            child:const FaIcon(
+              FontAwesomeIcons.heart,
+              color: Colors.red,
+              ),
+            ),
+          )
         ],
       )
       
@@ -71,6 +85,7 @@ class BorderPaint extends CustomPainter{
 
     final paint = Paint(); 
     paint.color = const Color(0xFFf2f2f2);
+    // paint.color = Color(0xFF523737);
     paint.style = PaintingStyle.fill;
     paint.strokeWidth = 5;
 

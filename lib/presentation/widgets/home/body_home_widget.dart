@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/presentation/widgets/home/body_header_widget.dart';
 import 'package:travel_app/presentation/widgets/home/body_places_widget.dart';
+import 'package:travel_app/presentation/widgets/home/nearby_home_widget.dart';
 
 class BodyHomeWidget extends StatelessWidget {
    
@@ -12,8 +13,10 @@ class BodyHomeWidget extends StatelessWidget {
         children: [
           BodyHeaderWidget(),
           SizedBox(height: 10,),
-          BodyPlacesWidget()
-          
+          BodyPlacesWidget(),
+          SizedBox(height: 20,),
+          NearbyHomeWidget(),
+
         ],
       );
   }
