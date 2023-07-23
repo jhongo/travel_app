@@ -9,14 +9,14 @@ class BodyPlacesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFFe56b6f),
       width: double.infinity,
-      height: 300,
+      height: 270,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: places.length,
         itemBuilder:(context, index) {
-          return CardPlaceWidget();
+          final itemPlaces = places[index];
+          return CardPlaceWidget(places: itemPlaces,);
         },
         ),
     );

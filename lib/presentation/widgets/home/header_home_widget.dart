@@ -10,6 +10,7 @@ class HeaderHomeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.white.withOpacity(0.4),
       padding:const EdgeInsets.symmetric(horizontal: 15),
       child:const Column(
         children: [

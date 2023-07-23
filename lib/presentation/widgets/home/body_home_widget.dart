@@ -11,6 +11,7 @@ class BodyHomeWidget extends StatelessWidget {
     return const Column(
         children: [
           BodyHeaderWidget(),
+          SizedBox(height: 10,),
           BodyPlacesWidget()
           
         ],

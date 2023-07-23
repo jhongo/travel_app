@@ -15,7 +15,8 @@ class CurveWidget extends StatelessWidget {
         height: 75,
         // color: Colors.indigo,
         child: CustomPaint(
-          painter: painter
+          painter: painter,
+
         ),
       ),
     );

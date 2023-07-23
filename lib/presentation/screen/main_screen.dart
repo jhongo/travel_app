@@ -23,12 +23,11 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: Color(0xFFe9ecef),
       body: SelectPageProvider(
         selectedIndex: _selectedIndex,
         pageController: _pageController,
         child: PageView(
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           controller:_pageController,
           children:const [
             HomeScreen(),
@@ -41,7 +40,7 @@ class _MainScreenState extends State<MainScreen> {
       bottomNavigationBar:  GNav(
         backgroundColor:Colors.white,
         selectedIndex: 0,
-        activeColor: Color(0xFF1976d2),
+        activeColor: const Color(0xFF1976d2),
         curve: Curves.linear,
         onTabChange: (value) {
           print(value);
@@ -82,7 +81,7 @@ class SelectPageProvider extends InheritedWidget {
 
   @override
   bool updateShouldNotify(SelectPageProvider oldWidget) {
-    pageController.animateToPage(selectedIndex, duration: Duration(milliseconds: 550), curve: Curves.easeIn);
+    pageController.animateToPage(selectedIndex, duration: const Duration(milliseconds: 550), curve: Curves.easeIn);
     // print(oldWidget);
   return true;
   }
