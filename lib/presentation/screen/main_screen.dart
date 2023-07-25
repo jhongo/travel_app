@@ -72,7 +72,7 @@ class SelectPageProvider extends InheritedWidget {
 
   final int selectedIndex;
   final PageController pageController;
-  SelectPageProvider({
+  const SelectPageProvider({
     Key? key,
     required this.pageController,
     required this.selectedIndex,
@@ -82,7 +82,6 @@ class SelectPageProvider extends InheritedWidget {
   @override
   bool updateShouldNotify(SelectPageProvider oldWidget) {
     pageController.animateToPage(selectedIndex, duration: const Duration(milliseconds: 550), curve: Curves.easeIn);
-    // print(oldWidget);
   return true;
   }
 }
