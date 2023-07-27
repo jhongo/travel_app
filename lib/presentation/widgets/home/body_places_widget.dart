@@ -16,9 +16,34 @@ class BodyPlacesWidget extends StatelessWidget {
         itemCount: places.length,
         itemBuilder:(context, index) {
           final itemPlaces = places[index];
-          return CardPlaceWidget(places: itemPlaces,);
+          return FavoriteFun(
+            isActive: false,
+            child: CardPlaceWidget(places: itemPlaces,));
         },
         ),
     );
   }
+}
+
+class FavoriteFun extends InheritedWidget{
+
+ final bool isActive;
+
+  FavoriteFun({super.key,required this.isActive, required Widget child}):super(child: child);
+
+  @override
+  bool updateShouldNotify(FavoriteFun oldWidget){
+
+
+
+    return true;
+
+  }
+
+  static FavoriteFun of(BuildContext context){
+    final provider = context.dependOnInheritedWidgetOfExactType<FavoriteFun>();
+    assert( provider !=null, 'No available');
+    return provider!;
+  }
+
 }

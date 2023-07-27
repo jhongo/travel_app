@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:travel_app/infraestructure/domain/favorite_func.dart';
 import 'package:travel_app/infraestructure/models/places_model.dart';
 import 'package:travel_app/presentation/widgets/home/body_curve_widget.dart';
+import 'package:travel_app/presentation/widgets/home/body_places_widget.dart';
 
 
 class CardPlaceWidget extends StatefulWidget {
@@ -17,11 +17,22 @@ class CardPlaceWidget extends StatefulWidget {
 class _CardPlaceWidgetState extends State<CardPlaceWidget> {
 
   Color _color =  Color(0xFF99C1B9);
+  late bool favorite = false;
+  _clickFavorite(){
+    // print(favorite);
+    if (favorite == true) {
+     print(favorite = false);
+    }else if (favorite == false) {
+    favorite = true;
+    }
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
 
-    // final func = FavoriteFun.of(context);
+    final func = FavoriteFun.of(context);
 
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
@@ -71,21 +82,21 @@ class _CardPlaceWidgetState extends State<CardPlaceWidget> {
      
 
           Positioned(right: 0,child: CurveWidget(painter: BorderPaint()),),
-          FavoriteFun(
+          Positioned(right: 0, child: FavoriteFun(
             isActive: widget.places.isFavorite,
-            child: Positioned(right: 0, child: TextButton(
+            child: TextButton(
               onPressed:() {
                 setState(() {
-                  widget.places.isFavorite;
+                  _clickFavorite();
                 });
               },
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.white,
                   shape: CircleBorder()
                 ), 
-              child: Icon(Icons.favorite, color: _color)
+              child: Icon(Icons.favorite, color:(favorite) ? Colors.red : _color)
               ),
-            ),
+          ),
           )
         ],
       )
@@ -128,3 +139,5 @@ class BorderPaint extends CustomPainter{
   }
   
 }
+
+

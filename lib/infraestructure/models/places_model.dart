@@ -31,7 +31,7 @@ final places = <Places>[
   review: 38, 
   score: 4.5, 
   price: 47, 
-  isFavorite: false, 
+  isFavorite: true, 
   category: 'beach'),
 
   Places(
