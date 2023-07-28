@@ -30,7 +30,7 @@ final categories = <Category>[
     enabled: true,
     ),
   Category(
-    name: 'Beach', 
+    name: 'Camp', 
     icon: FontAwesomeIcons.tent, 
     enabled: true,
     ),
