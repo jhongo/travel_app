@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_app/infraestructure/models/places_model.dart';
@@ -60,10 +62,13 @@ class _CardPlaceWidgetState extends State<CardPlaceWidget> {
             
             ClipRRect(
               borderRadius: const BorderRadius.only(topLeft: Radius.circular(35), topRight: Radius.circular(35)  ),
-              child: ImageCard(
-                urlImage: widget.places.url, 
-                sizeCard: 180
-                )
+              child: Hero(
+                tag: 'image-place',
+                child: ImageCard(
+                  urlImage: widget.places.url, 
+                  sizeCard: 180
+                  ),
+              )
             ),
     
             Positioned(
